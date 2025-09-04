@@ -3,165 +3,256 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Janani R | Portfolio</title>
+  <title>Portfolio - Janani R</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
       line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #222;
       color: #fff;
-      padding: 20px 0;
-      text-align: center;
+      background: linear-gradient(135deg, #ff512f, #dd2476, #24c6dc);
+      background-size: 600% 600%;
+      animation: gradientBG 15s ease infinite;
     }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+
+    header img:hover {
+      transform: scale(1.1);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 10px 0;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      background: rgba(0,0,0,0.6);
+      padding: 12px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+    }
+
     nav a {
       color: #fff;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
     }
+
+    nav a:hover {
+      color: #ffeb3b;
+      transform: scale(1.1);
+    }
+
     section {
-      padding: 20px;
+      padding: 50px 20px;
       max-width: 900px;
       margin: auto;
-      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      margin-bottom: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+      animation: fadeInUp 1.5s ease-in-out;
     }
-    h1, h2 {
-      color: #222;
+
+    h2 {
+      margin-bottom: 20px;
+      color: #ffeb3b;
     }
+
     ul {
       list-style: none;
-      padding: 0;
     }
+
     ul li {
-      margin: 8px 0;
+      background: rgba(255,255,255,0.2);
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      transition: transform 0.3s, background 0.3s;
     }
-    .contact {
-      background: #222;
+
+    ul li:hover {
+      transform: translateX(10px);
+      background: rgba(255,255,255,0.35);
+    }
+
+    .certificate-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .certificate-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .certificate-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+    }
+
+    footer {
+      background: rgba(0,0,0,0.8);
       color: #fff;
       text-align: center;
-      padding: 20px;
-    }
-    .contact a {
-      color: #00aced;
-      text-decoration: none;
-    }
-    footer {
-      text-align: center;
       padding: 15px;
-      background: #111;
-      color: #aaa;
-      font-size: 14px;
     }
+
     .btn {
       display: inline-block;
-      padding: 10px 15px;
-      margin-top: 10px;
-      background: #00aced;
+      padding: 10px 20px;
+      background: #ff9800;
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
+      margin-top: 15px;
+      transition: background 0.3s, transform 0.3s;
     }
+
     .btn:hover {
-      background: #0084a3;
+      background: #ff5722;
+      transform: scale(1.05);
     }
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #00aced;
-      margin-bottom: 15px;
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
   <header>
+    <img src="jana (1).jpg" alt="Profile Photo">
     <h1>Janani R</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#certificates">Certificates</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <p>Web developer|Java programmer</p>
   </header>
 
-  <section id="home">
-    <!-- Profile Photo -->
-    <img src="profile.jpg" alt="Janani R Profile Photo" class="profile-pic">
-    
-    <h2>Hi, I'm Janani R</h2>
-    <p><em>A Passionate Student & Frontend Developer</em></p>
-    <p>Welcome to my portfolio! Scroll below to know more about me.</p>
-    <a href="#contact" class="btn">Contact Me</a>
-  </section>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#resume">Resume</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I am Janani R, a dedicated student pursuing B.Sc. Computer Science at Government Arts and Science College, Avinashi. My passion lies in developing interactive applications and websites using frontend technologies.</p>
+    <p>Hi, I’m Janani R, a passionate learner and aspiring [your career goal – e.g., Web Developer / Software Engineer / Data Analyst]. I enjoy exploring technology, solving problems, and creating projects that make a real impact.
+
+🎓 Currently studying at Government Arts and Science College (Co-ed), Avinashi
+
+📚 Completed schooling at Government Higher Secondary School, Karuvalur
+
+💻 Interested in [add your interests – e.g., web development, programming, AI, design]
+
+🌱 Continuously learning and improving my skills in [your core subjects – e.g., Java, Data Structures, HTML/CSS, etc.]
+
+🤝 Open to collaborating on innovative projects and internships
+/p>
   </section>
 
   <section id="education">
     <h2>Education</h2>
     <ul>
-      <li><strong>B.Sc Computer Science</strong> – Government Arts and Science College, Avinashi</li>
-      <li><strong>HSLC</strong> – Government Higher Secondary School, Karuvalur</li>
-      <li><strong>SSLC</strong> – Government Girls Higher Secondary School, Karuvalur</li>
-    </ul>
-  </section>
-
-  <section id="certificates">
-    <h2>Certificates</h2>
-    <ul>
-      <li>Overview of English Language Communication – Lets Upgrade</li>
-      <li>Front End Web Development – Edunet</li>
-      <li>Web Development Fundamentals</li>
-    </ul>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Portfolio Website</strong> – A personal responsive portfolio built using HTML, CSS, and JS.</li>
+      <li>College - Government Arts and Science College (Co-Ed), Avinashi</li>
+      <li>HSLC - Government Higher Secondary School, Karuvalur</li>
+      <li>SSLC - Government Higher Secondary School, Karuvalur</li>
     </ul>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
-    <h3>Frontend</h3>
+    <h3>Technical Skills</h3>
     <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
+      <li>HTML, CSS, JavaScript</li>
+      <li>React / Angular</li>
+      <li>Python / Java</li>
+      <li>Database Management (MySQL, MongoDB)</li>
     </ul>
-    <h3>Others</h3>
+
+    <h3>Soft Skills</h3>
     <ul>
-      <li>GitHub</li>
       <li>Problem Solving</li>
+      <li>Communication</li>
+      <li>Teamwork</li>
+      <li>Time Management</li>
     </ul>
+  </section>
+
+  <section id="certificates">
+    <h2>Certificates</h2>
+    <div class="certificate-gallery">
+      <img src="Naanmudhalvan.jpg" alt="Certificate 1">
+    </div>
   </section>
 
   <section id="resume">
     <h2>Resume</h2>
-    <p>You can download my resume below:</p>
-    <a href="#" class="btn">Download Resume</a>
+    <p>You can view or download my resume below:</p>
+    <a href="print.pdf" class="btn" target="_blank">📄 Download Resume</a>
   </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li>Portfolio Website-personal portfolio website built using HTML,CSSand JavaScript.</li>
+    </ul>
+    <a href="#" class="btn">View More</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
     <p>Email: <a href="mailto:jananidakshita2007@gmail.com">jananidakshita2007@gmail.com</a></p>
-    <p>Phone: <a href="tel:8072711496">8072711496</a></p>
-    <p>Location: Karuvalur</p>
-    <a href="mailto:jananidakshita2007@gmail.com" class="btn">Send Message</a>
+    <p>Phone: <a href="tel:+918072711496">8072711496</a></p>
   </section>
 
   <footer>
